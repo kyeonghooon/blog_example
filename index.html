@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            width: 1000px;
+            padding: 10px;
+            margin: 5px auto;
+            border-bottom: 1px solid #ccc;
+            justify-content: space-between;
+
+        }
+
+        .setting {
+            width: 15px;
+            height: 15px;
+            position: relative;
+        }
+
+        .link-youtube {
+            position: relative;
+            text-decoration: none;
+            color: black;
+        }
+
+        .blog-main {
+            display: flex;
+        }
+
+        .container {
+            width: 1000px;
+            margin: 5px auto;
+        }
+        .nav-container {
+            width: 170px;
+            padding: 10px;
+            margin: 10px 5px;
+            border: 1px solid black;
+            border-radius: 10px;
+
+        }
+        .nav-head {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .nav-list li {
+            list-style: none;
+        }
+        .selected-menu {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        main {
+            width: 730px;
+            margin: 20px 5px;
+        }
+        .main-head {
+            display: flex;
+            justify-content: space-between;
+        }
+        .edit {
+            text-decoration: none;
+            color: black;
+        }
+        .page-container {
+            display: flex;
+            justify-content: center;
+        }
+        .page-list {
+            display: flex;
+            gap: 5px;
+        }
+        .page-list li {
+            list-style: none;
+        }
+        .content {
+            width: 180px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="blog-main">
+            <h2>Green's Blog </h2>
+            <a href="headline-setting.html"
+                onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;"> <img
+                    src="setting.png" alt="" class="setting" style="top: -10px"></a>
+        </div>
+        <a href="https://www.youtube.com/channel/UC-uWKja3o11-zgj5gm7m__Q" target="_blank" class="link-youtube">유튜브</a>
+
+    </header>
+    <div class="container">
+        <nav class="nav-container">
+            <div class="nav-head">
+                <h4>전체 보기</h4>
+                <a href="category-setting.html"
+                    onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;"> <img
+                        src="setting.png" alt="" class="setting"></a>
+            </div>
+            <ul class="nav-list">
+                <li>Python (12)</li>
+                <li>Java (2)</li>
+                <li>Ios (8)</li>
+                <li>소프트웨어 자료 (26)</li>
+                <li>자료구조 (8)</li>
+                <li>리눅스 (8)</li>
+                <li>Git (4)</li>
+                <li>자기계발 (3)</li>
+                <li class="selected-menu">경영전략 (20)</li>
+                <li>리더쉽 (7)</li>
+            </ul>
+        </nav>
+        <main class="main">
+            <div class="main-head">
+                <h4>경영전략 <span style="color: aqua;">20</span></h4>
+                <a href="edit.html" class="edit">수정</a>
+            </div>
+            <div class="content-list">
+                <div class="content">
+                    <div class="content-img"></div>
+                </div>
+            </div>
+            <div class="page-container">
+                <ul class="page-list">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
