@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+.display-flex {
+    display: flex;
+}
+
+
+
+header {
+    display: flex;
+    width: 1000px;
+    padding: 10px;
+    margin: 5px auto;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+}
+
+.img-setting {
+    width: 15px;
+    height: 15px;
+    position: relative;
+}
+
+.img-youtube {
+    width: 30px;
+    height: 21px;
+    position: relative;
+}
+
+.container {
+    width: 1000px;
+    margin: 5px auto;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-container {
+    width: 170px;
+    height: 300px;
+    /* 이런식으로 하고 싶지 않음 */
+    padding: 10px;
+    margin: 10px 5px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+
+}
+
+.nav-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 3px 0;
+}
+
+.nav-list li.selected-menu {
+    margin: 5px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: black;
+}
+
+main {
+    width: 730px;
+    margin: 20px 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.img-edit {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -5px;
+}
