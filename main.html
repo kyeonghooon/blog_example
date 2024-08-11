@@ -67,6 +67,11 @@
       .content-title {
         font-size: 1em;
         margin: 10px 0;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4; /* 4줄까지만 표시 */
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .content-date {
@@ -151,7 +156,11 @@
             <div class="content-img">
               <img src="images/sample.png" alt="" class="img-content" />
             </div>
-            <div class="content-title">불황 속에서도 기업 성장 챙기는 전략</div>
+            <div class="content-title">
+              불황 속에서도 기업 성장 챙기는 전략불황 속에서도 기업 성장 챙기는
+              전략불황 속에서도 기업 성장 챙기는 전략불황 속에서도 기업 성장
+              챙기는 전략불황 속에서도 기업 성장 챙기는 전략
+            </div>
             <div class="content-date">2022. 12. 8.</div>
           </div>
           <div class="content">
