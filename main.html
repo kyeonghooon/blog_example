@@ -1,209 +1,285 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Green's Blog - 경영전략</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/common.css" />
     <style>
-        
+      .page-container {
+        display: flex;
+        justify-content: center;
+      }
 
-        .main-head {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
+      .page-list {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
 
-        .edit {
-            text-decoration: none;
-            color: black;
-        }
+      .page-list li {
+        list-style: none;
+        display: flex;
+        align-items: flex-end;
+      }
+      .page-list li a {
+        display: flex;
+        align-items: flex-end;
+        text-decoration: none;
+        gap: 5px;
+        color: black;
+      }
+      .page-shift {
+        font-size: 1.5em;
+        display: inline-block;
+        transform: scaleY(1.5);
+        position: relative;
+        top: 5px;
+      }
 
-        .page-container {
-            display: flex;
-            justify-content: center;
-        }
+      .selected-page {
+        color: rgba(31, 214, 214, 0.785) !important;
+      }
 
-        .page-list {
-            display: flex;
-            gap: 5px;
-        }
+      .content {
+        width: 180px;
+      }
 
-        .page-list li {
-            list-style: none;
-        }
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
 
-        .content {
-            width: 180px;
+      .content-img {
+        border: 1px solid #ddd;
+        height: 158px;
+        padding: 10px;
+        font-size: 20px;
+        overflow: hidden;
+      }
+      .img-content {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+      }
 
-        }
+      .content-title {
+        font-size: 1em;
+        margin: 10px 0;
+      }
 
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .content-img {
-            border: 1px solid #ddd;
-            height: 158px;
-            padding: 10px;
-            font-size: 20px;
-        }
-
-        .content-title {
-            font-size: 1em;
-            margin: 10px 0;
-        }
-
-        .content-date {
-            font-size: 0.9em;
-            color: #888;
-        }
+      .content-date {
+        font-size: 0.9em;
+        color: #888;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="blog-main display-flex">
-            <h2>Green's Blog </h2>
-            <a href="headline-setting.html"
-                onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;"> <img
-                    src="images/setting.png" alt="" class="img-setting" style="top: -5px; left: 3px"></a>
-        </div>
-        <a href="https://www.youtube.com/channel/UC-uWKja3o11-zgj5gm7m__Q" target="_blank" class="link-youtube"><img
-                src="images/youtube.png" alt="" class="img-youtube"></a>
-
+      <div class="blog-main display-flex">
+        <h2>Green's Blog</h2>
+        <a
+          href="headline-setting.html"
+          onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;"
+        >
+          <img
+            src="images/setting.png"
+            alt=""
+            class="img-setting"
+            style="top: -5px; left: 3px"
+        /></a>
+      </div>
+      <a
+        href="https://www.youtube.com/channel/UC-uWKja3o11-zgj5gm7m__Q"
+        target="_blank"
+        class="link-youtube"
+        ><img src="images/youtube.png" alt="" class="img-youtube"
+      /></a>
     </header>
     <div class="container">
-        <nav class="nav-container">
-            <div class="nav-head">
-                <h4>전체 보기</h4>
-                <a href="category-setting.html"
-                    onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;"> <img
-                        src="images/setting.png" alt="" class="img-setting"></a>
+      <nav class="nav-container">
+        <div class="nav-head">
+          <h4>전체 보기</h4>
+          <a
+            href="category-setting.html"
+            onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;"
+          >
+            <img src="images/setting.png" alt="" class="img-setting"
+          /></a>
+        </div>
+        <ul class="nav-list">
+          <li>Python <span>(12)</span></li>
+          <li>Java <span>(2)</span></li>
+          <li>iOS <span>(8)</span></li>
+          <li>소프트웨어 자료 <span>(26)</span></li>
+          <li>
+            자료구조
+            <span>(8) <img src="images/new.jpg" alt="" class="img-new" /></span>
+          </li>
+          <li>리눅스 <span>(8)</span></li>
+          <li>Git <span>(4)</span></li>
+          <li>자기계발 <span>(3)</span></li>
+          <li class="selected-menu">
+            경영전략
+            <span>(20) </span>
+          </li>
+          <li>리더쉽 <span>(7)</span></li>
+        </ul>
+      </nav>
+      <main class="main">
+        <div class="main-head">
+          <h4>
+            경영전략 <span style="color: rgba(31, 214, 214, 0.785)">20</span>
+          </h4>
+          <a href="edit.html" class="edit"
+            ><img src="images/edit.png" alt="" class="img-edit"
+          /></a>
+        </div>
+        <div class="content-grid">
+          <div class="content">
+            <div class="content-img">
+              팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략
             </div>
-            <ul class="nav-list">
-                <li>Python <span>(12)</span></li>
-                <li>Java <span>(2)</span></li>
-                <li>iOS <span>(8)</span></li>
-                <li>소프트웨어 자료 <span>(26)</span></li>
-                <li>자료구조 <span>(8)</span></li>
-                <li>리눅스 <span>(8)</span></li>
-                <li>Git <span>(4)</span></li>
-                <li>자기계발 <span>(3)</span></li>
-                <li class="selected-menu">경영전략 <span>(20) <span class="new">N</span></span></li>
-                <li>리더쉽 <span>(7)</span></li>
-            </ul>
-        </nav>
-        <main class="main">
-            <div class="main-head">
-                <h4>경영전략 <span style="color: aqua;">20</span></h4>
-                <a href="edit.html" class="edit"><img
-                    src="images/edit.png" alt="" class="img-edit"></a>
+            <div class="content-title">
+              팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략
             </div>
-            <div class="content-grid">
-                <div class="content">
-                    <div class="content-img">팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략</div>
-                    <div class="content-title">팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략</div>
-                    <div class="content-date">2022. 12. 30.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">불황 속에서도 기업 성장 챙기는 전략</div>
-                    <div class="content-title">불황 속에서도 기업 성장 챙기는 전략</div>
-                    <div class="content-date">2022. 12. 8.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">CSV 실험, 전략적으로 접근이 필요하다.</div>
-                    <div class="content-title">CSV 실험, 전략적으로 접근이 필요하다.</div>
-                    <div class="content-date">2022. 12. 7.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">뉴노멀 시대 사무실</div>
-                    <div class="content-title">뉴노멀 시대 사무실</div>
-                    <div class="content-date">2022. 12. 2.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략</div>
-                    <div class="content-title">팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략</div>
-                    <div class="content-date">2022. 12. 30.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">불황 속에서도 기업 성장 챙기는 전략</div>
-                    <div class="content-title">불황 속에서도 기업 성장 챙기는 전략</div>
-                    <div class="content-date">2022. 12. 8.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">CSV 실험, 전략적으로 접근이 필요하다.</div>
-                    <div class="content-title">CSV 실험, 전략적으로 접근이 필요하다.</div>
-                    <div class="content-date">2022. 12. 7.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">뉴노멀 시대 사무실</div>
-                    <div class="content-title">뉴노멀 시대 사무실</div>
-                    <div class="content-date">2022. 12. 2.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략</div>
-                    <div class="content-title">팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략</div>
-                    <div class="content-date">2022. 12. 30.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">불황 속에서도 기업 성장 챙기는 전략</div>
-                    <div class="content-title">불황 속에서도 기업 성장 챙기는 전략</div>
-                    <div class="content-date">2022. 12. 8.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">CSV 실험, 전략적으로 접근이 필요하다.</div>
-                    <div class="content-title">CSV 실험, 전략적으로 접근이 필요하다.</div>
-                    <div class="content-date">2022. 12. 7.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">뉴노멀 시대 사무실</div>
-                    <div class="content-title">뉴노멀 시대 사무실</div>
-                    <div class="content-date">2022. 12. 2.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략</div>
-                    <div class="content-title">팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략</div>
-                    <div class="content-date">2022. 12. 30.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">불황 속에서도 기업 성장 챙기는 전략</div>
-                    <div class="content-title">불황 속에서도 기업 성장 챙기는 전략</div>
-                    <div class="content-date">2022. 12. 8.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">CSV 실험, 전략적으로 접근이 필요하다.</div>
-                    <div class="content-title">CSV 실험, 전략적으로 접근이 필요하다.</div>
-                    <div class="content-date">2022. 12. 7.</div>
-                </div>
-                <div class="content">
-                    <div class="content-img">뉴노멀 시대 사무실</div>
-                    <div class="content-title">뉴노멀 시대 사무실</div>
-                    <div class="content-date">2022. 12. 2.</div>
-                </div>
+            <div class="content-date">2022. 12. 30.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">
+              <img src="images/sample.png" alt="" class="img-content" />
             </div>
-            <div class="page-container">
-                <ul class="page-list">
-                    <a href="#">&laquo;</a>
-                    <a href="#" class="active">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#">&raquo;</a>
-                </ul>
+            <div class="content-title">불황 속에서도 기업 성장 챙기는 전략</div>
+            <div class="content-date">2022. 12. 8.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">
+              <img src="images/sample.png" alt="" class="img-content" />
             </div>
-        </main>
+            <div class="content-title">
+              CSV 실험, 전략적으로 접근이 필요하다.
+            </div>
+            <div class="content-date">2022. 12. 7.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">뉴노멀 시대 사무실</div>
+            <div class="content-title">뉴노멀 시대 사무실</div>
+            <div class="content-date">2022. 12. 2.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">
+              팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략
+            </div>
+            <div class="content-title">
+              팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략
+            </div>
+            <div class="content-date">2022. 12. 30.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">
+              <img src="images/sample.png" alt="" class="img-content" />
+            </div>
+            <div class="content-title">불황 속에서도 기업 성장 챙기는 전략</div>
+            <div class="content-date">2022. 12. 8.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">CSV 실험, 전략적으로 접근이 필요하다.</div>
+            <div class="content-title">
+              CSV 실험, 전략적으로 접근이 필요하다.
+            </div>
+            <div class="content-date">2022. 12. 7.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">
+              <img src="images/sample.png" alt="" class="img-content" />
+            </div>
+            <div class="content-title">뉴노멀 시대 사무실</div>
+            <div class="content-date">2022. 12. 2.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">
+              팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략
+            </div>
+            <div class="content-title">
+              팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략
+            </div>
+            <div class="content-date">2022. 12. 30.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">불황 속에서도 기업 성장 챙기는 전략</div>
+            <div class="content-title">불황 속에서도 기업 성장 챙기는 전략</div>
+            <div class="content-date">2022. 12. 8.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">CSV 실험, 전략적으로 접근이 필요하다.</div>
+            <div class="content-title">
+              CSV 실험, 전략적으로 접근이 필요하다.
+            </div>
+            <div class="content-date">2022. 12. 7.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">
+              <img src="images/sample.png" alt="" class="img-content" />
+            </div>
+            <div class="content-title">뉴노멀 시대 사무실</div>
+            <div class="content-date">2022. 12. 2.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">
+              <img src="images/sample.png" alt="" class="img-content" />
+            </div>
+            <div class="content-title">
+              팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략
+            </div>
+            <div class="content-date">2022. 12. 30.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">불황 속에서도 기업 성장 챙기는 전략</div>
+            <div class="content-title">불황 속에서도 기업 성장 챙기는 전략</div>
+            <div class="content-date">2022. 12. 8.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">CSV 실험, 전략적으로 접근이 필요하다.</div>
+            <div class="content-title">
+              CSV 실험, 전략적으로 접근이 필요하다.
+            </div>
+            <div class="content-date">2022. 12. 7.</div>
+          </div>
+          <div class="content">
+            <div class="content-img">뉴노멀 시대 사무실</div>
+            <div class="content-title">뉴노멀 시대 사무실</div>
+            <div class="content-date">2022. 12. 2.</div>
+          </div>
+        </div>
+        <div class="page-container">
+          <ul class="page-list">
+            <li>
+              <a href="#"
+                ><span class="page-shift">&lt;</span>
+                이전&nbsp;&nbsp;&nbsp;&nbsp;</a
+              >
+            </li>
+            <li><a href="#" class="selected-page">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+            <li>
+              <a href="#"
+                >&nbsp;&nbsp;&nbsp;&nbsp;다음
+                <span class="page-shift">&gt;</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </main>
     </div>
-
-</body>
-
+  </body>
 </html>
